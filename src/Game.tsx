@@ -34,6 +34,11 @@ export const Game: FC = () => {
     };
 
     const jumpTo = (step: any) => {
+        const currentStep = stepNumber;
+        if (currentStep !== step) {
+            setIsTie(false);
+            setChamp("");
+        }
         setStepNumber(step);
         setIs_XNext(step % 2 === 0);
     };
